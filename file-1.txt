@@ -1,2 +1,5 @@
 This is first change in branch1.
-Change in master
+
+=======
+THIS IS CHANGE IN BRANCH1 and master
+>>>>>>> branch1
