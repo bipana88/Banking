@@ -1,6 +1,6 @@
 /**************** Data Masking************************/
 /* Data masking types
---Make any changes on branch1
+--Make changes in new branch
 1) Default : The default mask, masks complete values in the specified column. To specify a mask for a particular column, 
              you have to use the “MASKED WITH” clause. Inside the MASKED WITH clause, you have to specify the FUNCTION that you want to use for 
 			 masking. If you want to perform default masking, you use the “default()” function.*/
