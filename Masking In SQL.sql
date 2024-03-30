@@ -1,9 +1,9 @@
 /**************** Data Masking************************/
 /* Data masking types
---Make any changes on branch1
+--Make any changes on branch1 in the github itself
 1) Default : The default mask, masks complete values in the specified column. To specify a mask for a particular column, 
-             you have to use the ìMASKED WITHî clause. Inside the MASKED WITH clause, you have to specify the FUNCTION that you want to use for 
-			 masking. If you want to perform default masking, you use the ìdefault()î function.*/
+             you have to use the ‚ÄúMASKED WITH‚Äù clause. Inside the MASKED WITH clause, you have to specify the FUNCTION that you want to use for 
+			 masking. If you want to perform default masking, you use the ‚Äúdefault()‚Äù function.*/
 -- varchar.char,nvarchar --- xxxx
 -- Date--1900-01-01
 -- INT,BigINT-- 0
@@ -33,7 +33,7 @@ VALUES
 SELECT * FROM DefaultMask
 
 /* In the output, you can see the unmasked values. This is because we returned the record as a database user that has full access rights. 
-   Letís create a new user that can only access the DefaultMask table and then select the records using our new user.*/
+   Let‚Äôs create a new user that can only access the DefaultMask table and then select the records using our new user.*/
 
 DROP USER IF EXISTS DefaultMaskTestUser;
 -- Drop the user when it will available 
@@ -52,7 +52,7 @@ SELECT * FROM DefaultMask
 /*
 2) Partial :The default mask hides everything in the column it is applied to. What if we want to partially display the information in the column 
             while leaving some part of it hidden?
-			This is where partial masks come in handy. To use a partial mask, you have to pass ìpartial(start characters, mask, end charactersî as 
+			This is where partial masks come in handy. To use a partial mask, you have to pass ‚Äúpartial(start characters, mask, end characters‚Äù as 
 			the value for the function parameter of the MASKED WITH clause. It is important to mention that the partial mask is only applicable to 
 			string type columns.*/
 DROP TABLE IF EXISTS PartialMask;
@@ -85,8 +85,8 @@ EXECUTE AS USER = 'PartialMaskTestUser';
 SELECT * FROM PartialMask
 REVERT
 /* 
-3) Email :The email mask is used to dynamically mask data which is in the email format. The function used is ìemail()î.
-          Letís create a new table with a column called Email and mask it using an email mask. */
+3) Email :The email mask is used to dynamically mask data which is in the email format. The function used is ‚Äúemail()‚Äù.
+          Let‚Äôs create a new table with a column called Email and mask it using an email mask. */
  
 DROP TABLE IF EXISTS EmailMask;
         
